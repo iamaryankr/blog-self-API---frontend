@@ -8,8 +8,10 @@ const port = 3000;
 const API_URL = "https://blog-self-api-backend.vercel.app";
 
 app.use(cors({
-  origin: "https://blog-self-api-frontend.vercel.app", // Allow requests from frontend
+  origin: ['https://blog-self-api-frontend.vercel.app', 'http://localhost:3000'],
+  credentials: true
 }));
+
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));

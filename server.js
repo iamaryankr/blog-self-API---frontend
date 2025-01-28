@@ -4,15 +4,13 @@ import axios from "axios";
 import cors from "cors";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000 ;
 const API_URL = "https://blog-self-api-backend.vercel.app";
 
 app.set('view engine', 'ejs');
 
-app.use(cors({
-  origin: ['https://blog-self-api-frontend.vercel.app', 'http://localhost:3000'],
-  credentials: true
-}));
+app.use(cors({ origin: 'https://blog-self-api-backend.vercel.app', credentials: true }));
+
 
 app.use(express.static("public"));
 
@@ -30,7 +28,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-// Route to render the edit page
+// Route to render the edit pagese
 app.get("/new", (req, res) => {
   res.render("modify.ejs", { heading: "New Post", submit: "Create Post" });
 });

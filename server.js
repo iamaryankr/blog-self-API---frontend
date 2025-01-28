@@ -2,12 +2,19 @@ import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 import cors from "cors";
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 
 const app = express();
 const port = process.env.PORT || 3000 ;
-const API_URL = "https://blog-self-api-backend.vercel.app";
+const API_URL = process.env.API_URL || "https://blog-self-api-backend.vercel.app";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(cors({ origin: 'https://blog-self-api-backend.vercel.app', credentials: true }));
 

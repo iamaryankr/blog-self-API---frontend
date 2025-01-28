@@ -4,7 +4,7 @@ import axios from "axios";
 
 const app = express();
 const port = 3000;
-const API_URL = "https://blog-self-api-backend.vercel.app/";
+const API_URL = "https://blog-self-api-backend.vercel.app";
 
 app.use(express.static("public"));
 

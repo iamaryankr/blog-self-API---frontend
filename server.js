@@ -7,6 +7,8 @@ const app = express();
 const port = 3000;
 const API_URL = "https://blog-self-api-backend.vercel.app";
 
+app.set('view engine', 'ejs');
+
 app.use(cors({
   origin: ['https://blog-self-api-frontend.vercel.app', 'http://localhost:3000'],
   credentials: true

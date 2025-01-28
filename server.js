@@ -7,7 +7,9 @@ const app = express();
 const port = 3000;
 const API_URL = "https://blog-self-api-backend.vercel.app";
 
-app.use(cors());
+app.use(cors({
+  origin: "https://blog-self-api-frontend.vercel.app", // Allow requests from frontend
+}));
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -8,8 +8,13 @@
   ],
   "routes": [
     {
+      "src": "/styles/(.*)",
+      "dest": "/public/styles/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/server.js"
     }
-  ]
+  ],
+  "framework": "node"
 }
